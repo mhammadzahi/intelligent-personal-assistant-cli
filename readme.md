@@ -2,7 +2,6 @@
 
 A command-line personal assistant built in Python that manages tasks, reminders, and notes, with automatic summarization and intelligent search.
 
----
 
 ## Features
 
@@ -35,7 +34,6 @@ A command-line personal assistant built in Python that manages tasks, reminders,
 * SQLite3 (recommended) or JSON
 * Stores tasks, notes, and reminders
 
----
 
 ## Project Structure
 
@@ -62,15 +60,14 @@ assistant/
 │   └── report.md
 ```
 
----
 
 ## Installation
 
 ### 1. Clone the project
 
 ```
-git clone https://github.com/yourusername/intelligent-assistant-cli.git
-cd intelligent-assistant-cli
+git clone https://github.com/mhammadzahi/intelligent-personal-assistant-cli.git
+cd intelligent-personal-assistant-cli
 ```
 
 ### 2. Create a virtual environment
@@ -99,7 +96,6 @@ python -m spacy download en_core_web_sm
 python -c "import nltk; nltk.download('punkt')"
 ```
 
----
 
 ## Usage
 
