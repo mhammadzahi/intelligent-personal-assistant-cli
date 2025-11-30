@@ -1,275 +1,275 @@
-# Intelligent Personal Assistant CLI
+# Assistant Personnel Intelligent CLI
 
-A powerful command-line personal assistant that helps you manage tasks, notes, and reminders with AI-powered text summarization.
+Un puissant assistant personnel en ligne de commande qui vous aide à gérer les tâches, les notes et les rappels avec résumé de texte alimenté par l'IA.
 
-## Features
+## Fonctionnalités
 
-- 📝 **Task Management**: Create, list, complete, and delete tasks with categories
-- 📓 **Note Taking**: Add notes with automatic AI-powered summarization using NLP
-- ⏰ **Reminders**: Set time-based reminders with console notifications
-- 🔍 **Search**: Search through your notes efficiently
-- 🎨 **Rich CLI**: Beautiful terminal interface with tables and panels
+- 📝 **Gestion des Tâches**: Créer, lister, compléter et supprimer des tâches avec des catégories
+- 📓 **Prise de Notes**: Ajouter des notes avec résumé automatique alimenté par l'IA en utilisant le NLP
+- ⏰ **Rappels**: Définir des rappels basés sur le temps avec des notifications console
+- 🔍 **Recherche**: Rechercher dans vos notes efficacement
+- 🎨 **Interface CLI Riche**: Belle interface de terminal avec des tableaux et des panneaux
 
-## Prerequisites
+## Prérequis
 
-- Python 3.8 or higher
-- pip package manager
+- Python 3.8 ou supérieur
+- Gestionnaire de paquets pip
 
 ## Installation
 
-1. Clone the repository:
+1. Clonez le dépôt:
 ```bash
 git clone https://github.com/mhammadzahi/intelligent-personal-assistant-cli.git
 cd intelligent-personal-assistant-cli
 ```
 
-2. Create and activate a virtual environment:
+2. Créez et activez un environnement virtuel:
 ```bash
 python3 -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
+source env/bin/activate  # Sur Windows: env\Scripts\activate
 ```
 
-3. Install dependencies:
+3. Installez les dépendances:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Download the spaCy language model (if not auto-downloaded):
+4. Téléchargez le modèle de langue spaCy (si non téléchargé automatiquement):
 ```bash
 python -m spacy download en_core_web_sm
 ```
 
-## Usage
+## Utilisation
 
-### Task Management
+### Gestion des Tâches
 
-#### Add a Task
+#### Ajouter une Tâche
 ```bash
-python main.py task add "Buy groceries"
-python main.py task add "Complete project report" --category work
+python main.py task add "Acheter des courses"
+python main.py task add "Terminer le rapport de projet" --category work
 ```
 
-#### List All Tasks
+#### Lister Toutes les Tâches
 ```bash
 python main.py task list
 ```
 
-#### Mark Task as Done
+#### Marquer une Tâche comme Terminée
 ```bash
 python main.py task done 1
 ```
 
-#### Delete a Task
+#### Supprimer une Tâche
 ```bash
 python main.py task delete 1
 ```
 
-### Note Management
+### Gestion des Notes
 
-#### Add a Note
-The assistant will automatically generate a summary using NLP:
+#### Ajouter une Note
+L'assistant générera automatiquement un résumé en utilisant le NLP:
 ```bash
-python main.py note add "Meeting Notes" "Today we discussed the Q4 roadmap. Key points include launching the new feature by December, hiring two more developers, and increasing marketing budget. The team agreed on the timeline."
+python main.py note add "Notes de Réunion" "Aujourd'hui, nous avons discuté de la feuille de route du quatrième trimestre. Les points clés incluent le lancement de la nouvelle fonctionnalité en décembre, l'embauche de deux développeurs supplémentaires et l'augmentation du budget marketing. L'équipe a accepté le calendrier."
 ```
 
-#### List All Notes
+#### Lister Toutes les Notes
 ```bash
 python main.py note list
 ```
 
-#### Search Notes
-Search through note titles and content:
+#### Rechercher des Notes
+Rechercher dans les titres et le contenu des notes:
 ```bash
-python main.py note search "roadmap"
-python main.py note search "meeting"
+python main.py note search "feuille de route"
+python main.py note search "réunion"
 ```
 
-#### Delete a Note
+#### Supprimer une Note
 ```bash
 python main.py note delete 1
 ```
 
-### Reminder Management
+### Gestion des Rappels
 
-#### Add a Reminder
-Reminders use the format `YYYY-MM-DD HH:MM`:
+#### Ajouter un Rappel
+Les rappels utilisent le format `AAAA-MM-JJ HH:MM`:
 ```bash
-python main.py reminder add "Doctor appointment" "2025-12-15 10:30"
-python main.py reminder add "Call mom" "2025-12-01 18:00"
+python main.py reminder add "Rendez-vous chez le médecin" "2025-12-15 10:30"
+python main.py reminder add "Appeler maman" "2025-12-01 18:00"
 ```
 
-#### List All Reminders
+#### Lister Tous les Rappels
 ```bash
 python main.py reminder list
 ```
 
-#### Delete a Reminder
+#### Supprimer un Rappel
 ```bash
 python main.py reminder delete 1
 ```
 
-#### Reminder Notifications
-Reminders are automatically checked when you run the application. If any reminders are due, they will be displayed as console notifications.
+#### Notifications de Rappels
+Les rappels sont automatiquement vérifiés lorsque vous lancez l'application. Si des rappels sont dus, ils seront affichés comme des notifications console.
 
-## Project Structure
+## Structure du Projet
 
 ```
 intelligent-personal-assistant-cli/
-├── main.py              # CLI entry point and command handling
-├── controllers.py       # Business logic for tasks, notes, and reminders
-├── models.py           # Data models (Task, Note, Reminder)
-├── database.py         # SQLite database connection and initialization
-├── nlp_utils.py        # NLP text summarization utilities
-├── notifications.py    # Reminder notification system
-├── utils.py            # Helper functions (date parsing, formatting)
-├── requirements.txt    # Python dependencies
-└── README.md          # This file
+├── main.py              # Point d'entrée CLI et gestion des commandes
+├── controllers.py       # Logique métier pour les tâches, notes et rappels
+├── models.py           # Modèles de données (Task, Note, Reminder)
+├── database.py         # Connexion et initialisation de la base de données SQLite
+├── nlp_utils.py        # Utilitaires de résumé de texte NLP
+├── notifications.py    # Système de notification des rappels
+├── utils.py            # Fonctions d'aide (analyse de date, formatage)
+├── requirements.txt    # Dépendances Python
+└── README.md          # Ce fichier
 ```
 
-## Data Storage
+## Stockage des Données
 
-The application uses SQLite for data persistence. The database file (`assistant.db`) is automatically created in the project directory on first run.
+L'application utilise SQLite pour la persistance des données. Le fichier de base de données (`assistant.db`) est automatiquement créé dans le répertoire du projet lors de la première exécution.
 
-### Database Schema
+### Schéma de la Base de Données
 
-**Tasks Table:**
-- `id`: Primary key
-- `title`: Task title
-- `category`: Task category (default: "general")
-- `status`: Task status ("pending" or "done")
-- `created_at`: Timestamp
+**Table des Tâches:**
+- `id`: Clé primaire
+- `title`: Titre de la tâche
+- `category`: Catégorie de la tâche (par défaut: "general")
+- `status`: Statut de la tâche ("pending" ou "done")
+- `created_at`: Horodatage
 
-**Notes Table:**
-- `id`: Primary key
-- `title`: Note title
-- `content`: Full note content
-- `summary`: AI-generated summary
-- `created_at`: Timestamp
+**Table des Notes:**
+- `id`: Clé primaire
+- `title`: Titre de la note
+- `content`: Contenu complet de la note
+- `summary`: Résumé généré par l'IA
+- `created_at`: Horodatage
 
-**Reminders Table:**
-- `id`: Primary key
-- `title`: Reminder title
-- `due_date`: Due date and time
-- `status`: Reminder status ("pending")
-- `created_at`: Timestamp
+**Table des Rappels:**
+- `id`: Clé primaire
+- `title`: Titre du rappel
+- `due_date`: Date et heure d'échéance
+- `status`: Statut du rappel ("pending")
+- `created_at`: Horodatage
 
-## Examples
+## Exemples
 
-### Complete Workflow Example
+### Exemple de Flux de Travail Complet
 
 ```bash
-# Add some tasks
-python main.py task add "Prepare presentation" --category work
-python main.py task add "Go to gym" --category personal
-python main.py task add "Review pull requests" --category work
+# Ajouter quelques tâches
+python main.py task add "Préparer la présentation" --category work
+python main.py task add "Aller à la salle de sport" --category personal
+python main.py task add "Examiner les pull requests" --category work
 
-# List all tasks
+# Lister toutes les tâches
 python main.py task list
 
-# Mark a task as done
+# Marquer une tâche comme terminée
 python main.py task done 1
 
-# Add a detailed note with auto-summarization
-python main.py note add "Project Ideas" "We brainstormed several ideas for the next quarter. First, implementing a mobile app version of our platform. Second, adding AI-powered recommendations. Third, improving the onboarding experience with interactive tutorials. The team was most excited about the AI features."
+# Ajouter une note détaillée avec résumé automatique
+python main.py note add "Idées de Projet" "Nous avons fait un brainstorming de plusieurs idées pour le prochain trimestre. Premièrement, implémenter une version d'application mobile de notre plateforme. Deuxièmement, ajouter des recommandations alimentées par l'IA. Troisièmement, améliorer l'expérience d'intégration avec des tutoriels interactifs. L'équipe était plus enthousiaste à propos des fonctionnalités d'IA."
 
-# List notes to see the summary
+# Lister les notes pour voir le résumé
 python main.py note list
 
-# Search for specific notes
-python main.py note search "AI"
+# Rechercher des notes spécifiques
+python main.py note search "IA"
 
-# Set reminders
-python main.py reminder add "Team standup" "2025-12-01 09:00"
-python main.py reminder add "Submit timesheet" "2025-12-01 17:00"
+# Définir des rappels
+python main.py reminder add "Standup d'équipe" "2025-12-01 09:00"
+python main.py reminder add "Soumettre la feuille de temps" "2025-12-01 17:00"
 
-# List reminders
+# Lister les rappels
 python main.py reminder list
 
-# Delete completed items
+# Supprimer les éléments terminés
 python main.py task delete 1
 python main.py note delete 1
 python main.py reminder delete 1
 ```
 
-## Features in Detail
+## Fonctionnalités en Détail
 
-### AI-Powered Summarization
+### Résumé Alimenté par l'IA
 
-When you add a note, the application uses spaCy's NLP capabilities to:
-1. Analyze the text content
-2. Calculate word frequencies (excluding stop words)
-3. Score sentences based on important keywords
-4. Extract the most relevant sentences
-5. Generate a concise summary
+Lorsque vous ajoutez une note, l'application utilise les capacités NLP de spaCy pour:
+1. Analyser le contenu du texte
+2. Calculer les fréquences des mots (en excluant les mots vides)
+3. Noter les phrases en fonction des mots-clés importants
+4. Extraire les phrases les plus pertinentes
+5. Générer un résumé concis
 
-This helps you quickly review your notes without reading the entire content.
+Cela vous aide à examiner rapidement vos notes sans lire tout le contenu.
 
-### Task Categories
+### Catégories de Tâches
 
-Organize your tasks with custom categories:
-- `work`: Professional tasks
-- `personal`: Personal errands
-- `shopping`: Shopping lists
-- `general`: Miscellaneous tasks (default)
+Organisez vos tâches avec des catégories personnalisées:
+- `work`: Tâches professionnelles
+- `personal`: Courses personnelles
+- `shopping`: Listes de courses
+- `general`: Tâches diverses (par défaut)
 
-### Reminder Notifications
+### Notifications de Rappels
 
-The application checks for due reminders every time it's launched. If any reminders have passed their due date, they'll be displayed prominently in a notification panel.
+L'application vérifie les rappels dus à chaque fois qu'elle est lancée. Si des rappels ont dépassé leur date d'échéance, ils seront affichés de manière visible dans un panneau de notification.
 
-## Dependencies
+## Dépendances
 
-- **rich**: Beautiful terminal formatting and tables
-- **spacy**: Natural language processing for text summarization
-- **en_core_web_sm**: English language model for spaCy
+- **rich**: Formatage de terminal et tableaux magnifiques
+- **spacy**: Traitement du langage naturel pour le résumé de texte
+- **en_core_web_sm**: Modèle de langue anglaise pour spaCy
 
-## Tips
+## Conseils
 
-1. **Use quotes** for multi-word arguments:
+1. **Utilisez des guillemets** pour les arguments multi-mots:
    ```bash
-   python main.py task add "This is a multi-word task"
+   python main.py task add "Ceci est une tâche multi-mots"
    ```
 
-2. **Date format** for reminders must be `YYYY-MM-DD HH:MM`:
+2. **Le format de date** pour les rappels doit être `AAAA-MM-JJ HH:MM`:
    ```bash
-   python main.py reminder add "Meeting" "2025-12-25 14:30"
+   python main.py reminder add "Réunion" "2025-12-25 14:30"
    ```
 
-3. **Search is case-insensitive** and searches both titles and content:
+3. **La recherche est insensible à la casse** et recherche à la fois dans les titres et le contenu:
    ```bash
-   python main.py note search "project"
+   python main.py note search "projet"
    ```
 
-4. **Task IDs** are displayed when listing - use them for done/delete operations
+4. **Les ID de tâches** sont affichés lors de la liste - utilisez-les pour les opérations done/delete
 
-## Troubleshooting
+## Dépannage
 
-### spaCy Model Not Found
-If you get an error about missing spaCy model:
+### Modèle spaCy Non Trouvé
+Si vous obtenez une erreur concernant un modèle spaCy manquant:
 ```bash
 python -m spacy download en_core_web_sm
 ```
 
-### Import Errors
-Make sure you've activated the virtual environment:
+### Erreurs d'Importation
+Assurez-vous d'avoir activé l'environnement virtuel:
 ```bash
-source env/bin/activate  # On Windows: env\Scripts\activate
+source env/bin/activate  # Sur Windows: env\Scripts\activate
 ```
 
-### Database Errors
-If you encounter database issues, you can delete `assistant.db` to start fresh (this will delete all your data).
+### Erreurs de Base de Données
+Si vous rencontrez des problèmes de base de données, vous pouvez supprimer `assistant.db` pour recommencer (cela supprimera toutes vos données).
 
-## Contributing
+## Contribution
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Les contributions sont les bienvenues! N'hésitez pas à soumettre une Pull Request.
 
-## License
+## Licence
 
-This project is open source and available under the MIT License.
+Ce projet est open source et disponible sous la licence MIT.
 
-## Author
+## Auteur
 
 Mohammad Hammad Zahi (@mhammadzahi)
 
 ## Support
 
-For issues, questions, or suggestions, please open an issue on GitHub.
+Pour les problèmes, questions ou suggestions, veuillez ouvrir un issue sur GitHub.
